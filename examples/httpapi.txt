@@ -1,0 +1,37 @@
+Code Filter Test
+================
+
+
+----
+asdfasdf
+asdfas
+----
+
+
+[yaml2any,"httpapi.txt"]
+--------------------------------------------------------------------------------
+path:       /client_profile/get
+small_desc: Get client profile
+methods:    GET, POST
+desc:       |
+    looooooooooooong description
+    bla bla bla
+    +
+    [NOTE]
+    ===========================
+    asdfasdf
+    ===========================
+headers:
+    - X-Real-IP:
+        desc:       Real IP address of the user
+        default:    0.0.0.0
+    - X-Fucking-Shit:   Some fucking header
+params:
+    - user_id:
+        desc:       asdfasdfdasfasdf
+        default:    asdf
+    - password:     some secret string
+ok_resp:    {"status":200}
+err_resp:   {"status":STATUS,"reason":"REASON"}
+examples:   some examples
+--------------------------------------------------------------------------------
